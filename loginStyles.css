@@ -1,0 +1,196 @@
+@font-face {
+    font-family: "Feather Bold";
+    src: url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.eot");
+    src: url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.svg#Feather Bold")format("svg");
+}
+
+@font-face {
+    font-family: justCosmic;
+    src: url(assets/JustCosmic.otf);
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: #595453;
+    font-family: "Feather Bold";
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    background: black;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+input[type=text] {
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+.gallery-show {
+    padding-left: 300px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #a34a1d;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover {
+    cursor: pointer;
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login {
+    width: 500px;
+    height: 676px;
+    padding-right: 5em;
+    padding-left: 5em;
+    padding-top: 4em;
+    padding-bottom: 20em;
+    border: solid #331513 2px;
+    border-radius: 10px;
+    box-shadow: 0 6px 50px 0 rgba(51, 21, 19, 1);
+}
+
+.title_flex {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 20px;
+}
+
+.title {
+    font-family: justCosmic;
+    letter-spacing: 1.5px;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: wheat;
+}
+
+.title_header {
+    width: 65px;
+    height: 65px;
+}
+
+.username_input, .password_input {
+    background: black;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: solid #595453 2px;
+    font-size: 1.6rem;
+}
+
+.submit_button {
+    font-family: "justCosmic";
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    color: white;
+    width: 100%;
+    padding: 0.5em;
+    background: #3d1e1d;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit_button:hover {
+    background: #631917;
+    cursor: pointer;
+}
+
+.divider_text {
+    font-family: "Feather Bold";
+    font-size: 1.3rem;
+    color: gray;
+}
+
+.qr_button {
+    font-family: "justCosmic";
+    margin-top: 1.5rem;
+    margin-bottom: 4rem;
+    padding: 0.8em;
+    width: 100%;
+    color: wheat;
+    background-color: black;
+    border: solid #631917 1.5px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 2.0rem;
+    letter-spacing: 1px;
+}
+
+.qr_button:hover {
+    cursor: pointer;
+    color: #7a1614;
+}
+
+.login_opt_flex {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 3rem;
+}
+
+.login_logo {
+    width: 11%;
+    height: auto;
+}
+
+.login_logo:hover {
+    cursor: pointer;
+}
+
+.forgot_text {
+    font-family: "Feather Bold";
+    color: wheat;
+    font-size: 1.4rem;
+}
+
+.forgot_text:hover {
+    color: #631917;
+}

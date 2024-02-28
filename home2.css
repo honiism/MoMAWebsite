@@ -1,0 +1,658 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+@font-face {
+    font-family: justCosmic;
+    src: url(assets/JustCosmic.otf);
+}
+
+@font-face {
+    font-family: ghosthey;
+    src: url(assets/ghosthey-Regular.ttf);
+}
+
+html {
+    font-size: 62.5%; /** Makes it so that 0.1 rem = 1 px **/
+    overflow-x: hidden;
+}
+
+a {
+    all: unset;
+}
+
+p {
+    cursor: default;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    min-width: 100vw;
+    min-height: 125vh;
+    background-image: url("assets/Bg.png");
+    background-size: cover;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.body {
+    display: grid;
+    grid-area: 100%;
+    column-gap: 0px;
+}
+
+/** Extra **/
+.highlight-gold {
+    color: wheat;
+}
+
+/** Loading **/
+.loader {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity 1.5s, visibility 1.5s;
+}
+
+.loading-title {
+    font-family: "justCosmic";
+    color: #631917;
+    font-size: 3.0rem;
+    margin-bottom: 50px;
+    animation: text-load 1.5s ease infinite;
+}
+
+.loader-hidden {
+    opacity: 0;
+    display: none;
+}
+
+.loader::after {
+    content: "";
+    width: 130px;
+    height: 130px;
+    border: 15px solid black;
+    border-top-color: #631917;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes text-load {
+    0% {
+        color: #631917;
+    }
+    50% {
+        color: #81266d;
+    }
+    100% {
+        color: #582681;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: #631917;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-top-color: #81266d;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-color: #582681;
+    }
+}
+
+/** home **/
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+/** Header **/
+.header {
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5px;
+    background-color: black;
+}
+
+.header-icon {
+    width: 8%;
+    height: auto;
+}
+
+.header-text {
+    font-family: justCosmic;
+    font-size: 2.5rem;
+    color: wheat;
+}
+
+/** Menu **/
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-li {
+    float: left;
+    list-style-type: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: white;
+    border-bottom: 1px solid #8b776d;
+}
+
+.menu-li:hover {
+    cursor: pointer;
+    color: #855c2c;
+}
+
+.sidebar {
+    display: none;
+}
+
+/** Galery **/
+.gallery-show {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 45%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #a34a1d;
+}
+
+/** horz 1*/
+.horizontal-sec-1 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.sec-icon {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-img-1 {
+    position: absolute;
+    width: 130%;
+    height: auto;
+    z-index: 0;
+}
+
+.sec-decor-1 {
+    position: absolute;
+    z-index: 1;
+    width: 20%;
+    height: auto;
+    left: 10px;
+    align-self: normal;
+}
+
+.horz-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.sec-title {
+    font-family: justCosmic;
+    font-size: 2.5rem;
+    color: hsl(23, 29%, 43%);
+    letter-spacing: 2px;
+}
+
+.sec-desc {
+    color: white;
+    font-family: Times New Roman;
+    padding-top: 5px;
+    font-size: 1.3rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button {
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid #8c654d;
+    background-color: transparent;
+    color: white;
+    padding: 10px 10px;
+    padding-left: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 70%;
+}
+
+/** Horz 2 **/
+.horizontal-sec-2 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.sec-img-2 {
+    position: absolute;
+    width: 120%;
+    height: auto;
+    z-index: 0;
+}
+
+.sec-decor-2 {
+    position: absolute;
+    z-index: 1;
+    width: 25%;
+    height: auto;
+    right: 10px;
+    align-self: normal;
+}
+
+/** Horz 3 **/
+.sec-img-3 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.sec-decor-3 {
+    position: absolute;
+    z-index: 1;
+    width: 25%;
+    height: auto;
+    right: -20px;
+    top: 10px;
+    align-self: normal;
+}
+
+/** Reviews **/
+.reviews-show {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.reviews-title {
+    font-family: justCosmic;
+    font-size: 2.5rem;
+    color: hsl(23, 29%, 43%);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.reviews-items {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.review {
+    width: 70%;
+    height: auto;
+}
+
+/** Map **/
+.map-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.map-title {
+    font-family: justCosmic;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: hsl(25, 44%, 63%);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.map {
+    max-width: 95%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 1.2rem;
+    max-width: 45ch;
+    text-align: center;
+}
+
+/** Footer **/
+.footer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.723);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.footer-logos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.footer-logo {
+    width: 6%;
+}
+
+.footer-names {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media only screen and (min-width: 450px) {
+    .sec-img-1, .sec-img-2, .sec-img-3 {
+        width: 100%;
+    }
+
+    .sec-decor-1, .sec-decor-2, .sec-decor-3 {
+        width: 15%;
+    }
+
+    .sec-decor-3 {
+        right: 18px;
+        top: -5px;
+    }
+
+    .gallery-item {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    .gallery-item {
+        width: 35%;
+    }
+
+    .sec-img-1 {
+        width: 90%;
+    }
+
+    .sec-desc {
+        max-width: 35ch;
+    }
+
+    .sec-img-2 {
+        width: 100%;
+    }
+
+    .sec-img-3 {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .map {
+        width: 100%;
+    }
+
+    .review {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .gallery-item {
+        width: 28%;
+    }
+
+    .sec-img-1, .sec-img-2, .sec-img-3 {
+        width: 85%;
+    }
+
+    .sec-title, .reviews-title, .map-title {
+        font-size: 2.5rem;
+    }
+
+    .sec-desc {
+        font-size: 1.5rem;
+    }
+
+    .review {
+        width: 55%;
+    }
+
+    .footer-names {
+        font-size:1.8rem;
+    }
+
+    .location {
+        font-size: 1.6rem;
+    }
+
+    .header-text {
+        font-size: 2.5rem;
+    }
+
+    .menu-li {
+        font-size: 2.0rem;
+    }
+
+    .footer-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 740px) {
+    .sec-img-1, .sec-img-2, .sec-img-3 {
+        width: 75%;
+    }
+
+    .sec-decor-1 {
+        left: 50px;
+    }
+
+    .sec-decor-2 {
+        right: 50px;
+    }
+
+    .sec-decor-3 {
+        right: 3px;
+    }
+
+    .map {
+        width: 90%;
+    }
+
+    .footer-logo {
+        width: 4%;
+    }
+
+    .gallery-item {
+        width: 26%;
+    }
+
+    .gallery-show {
+        margin-bottom: 60px;
+    }
+
+    .review {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .sec-img-1, .sec-img-2, .sec-img-3 {
+        width: 70%;
+    }
+
+    .horizontal-sec-1, .horizontal-sec-2 {
+        position:relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    .button {
+        font-size: 2.0rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .header-icon {
+        width: 5%;
+    }
+
+    .body {
+        grid-template-columns: 15% 85%;
+    }
+
+    /** sidebar **/
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.486);
+        border-right: 1px solid rgb(205, 165, 112);
+    }
+
+    .sidebar-title {
+        font-family: justCosmic;
+        font-size: 3.0rem;
+        color: wheat;
+        margin-bottom: 15px;
+    }
+
+    .sidebar-li {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2.0rem;
+        color: rgb(205, 165, 112);
+        margin-bottom: 10px;
+    }
+
+    .sidebar-li:hover {
+        cursor: pointer;
+        color: #8c654d;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .gallery-show {
+        margin-bottom: 50px;
+    }
+
+    .gallery-item {
+        width: 18%;
+    }
+
+    .sec-img-1, .sec-img-2, .sec-img-3 {
+        width: 60%;
+    }
+
+    .sec-title, .reviews-title, .map-title {
+        font-size: 3.0rem;
+    }
+
+    .location, .footer-names {
+        font-size: 1.8rem;
+    }
+
+    .sec-desc, .button {
+        font-size: 1.8rem;
+    }
+
+    .review {
+        width: 25%;
+    }
+
+    .horizontal-sec-1, .horizontal-sec-2 {
+        position:relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    .footer-logo {
+        width: 3%;
+    }
+}
